@@ -1,55 +1,59 @@
-import React, { useState,useContext } from 'react'
+import React, {useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { TextField } from '@mui/material';
-import { Types } from '../Context';
+import { Types } from '../Context/TypeContext';
 
-const General = () => {
-  const {type,setType} = useContext(Types)
-  
-  const [selectedDateTime, setSelectedDateTime] = useState(new Date())
+const General = ({startDateTime,endDateTime,
+  setStartDateTime,setEndDateTime,
+  comments,setComments,
+location,setLocation,
+name,setName}) => {
+  const {type} = useContext(Types)
 
-  
   return (
     <div>
       <nav><a className="navbar-brand" href='/'>General 2/3</a></nav>
         <form action="">
             <div className="row gen">
-              <div className="col-md-6">
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <div className="col-md-6">
+                    <DateTimePicker
+                      label="Start Date & Time"
+                      value={startDateTime}
+                      onChange={(newVal) => {setStartDateTime(newVal)}}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  
+                </div>
+
+                <div className="col-md-6">
                   <DateTimePicker
-                    label="Start Date & Time"
-                    value={selectedDateTime}
-                    onChange={(newVal) => {setSelectedDateTime(newVal)}}
+                    label="End Date & Time"
+                    value={endDateTime}
+                    onChange={(newVal) => {setEndDateTime(newVal)}}
                     renderInput={(params) => <TextField {...params} />}
                   />
+                </div>
                 </LocalizationProvider>
-              </div>
-              <div className="col-md-6">
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DateTimePicker
-                  label="End Date & Time"
-                  value={selectedDateTime}
-                  onChange={(newVal) => {setSelectedDateTime(newVal)}}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
-                
-              </div>
             </div>
 
-            <div className="row gen">
-              
-              { type.value === 'Friendly' ? (<div className="col-md-6">
-              <input type="text" name="" id="generalInput" placeholder='Match Location' />
-              </div>) : (<div className="col-md-6">
-              <input type="text" name="" id="generalInput" placeholder='Match Location' /><br></br>
-              <input type="text" name="" id="generalInput" placeholder='Tournament Name' />
+            <div className="row">
+              { type.value === 'Friendly' ? 
+              (<div className="col-md-6">
+              <input type="text" name="" id="generalInput" placeholder='Match Location' 
+              value={location} onChange={e=> setLocation(e.target.value)}/>
+              </div>) : 
+              (<div className="col-md-6">
+              <input type="text" name="" id="generalInput" placeholder='Match Location' 
+               value={location} onChange={e=> setLocation(e.target.value)}/><br></br>
+              <input type="text" name="" id="generalInput" placeholder='Tournament Name'
+               value={name} onChange={e=> setName(e.target.value)} />
               </div>) }
               <div className="col-md-6">
-                <textarea id="w3review" name="w3review" placeholder='Comments' rows="10" cols="40">
+                <textarea id="comments" value={comments} onChange={e=> setComments(e.target.value)} placeholder='Comments' rows="13" cols="40">
                 </textarea>
               </div>
             </div>

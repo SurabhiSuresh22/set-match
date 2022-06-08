@@ -2,7 +2,7 @@ import React, { createContext,useState } from 'react'
 
 export const Types = createContext()
 
-const Context = ({children}) => {
+const TypeContext = ({children}) => {
     const [type,setType] = useState(null)
 
   return (
@@ -12,4 +12,4 @@ const Context = ({children}) => {
   )
 }
 
-export default Context
+export default TypeContext

@@ -1,7 +1,7 @@
-import React,{useContext, useState} from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import Select from 'react-select'
-import {Types} from '../Context'
+import {Types} from '../Context/TypeContext'
 
 const Type = () => {
     

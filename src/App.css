@@ -23,7 +23,7 @@ a{
   padding: 5px 40px;
   background-color: red;
   color: white;
-  bottom: 20%;
+  bottom: 10%;
   right: 20%;
   border: solid 0.2px gray;
 }
@@ -32,7 +32,7 @@ a{
     padding: 5px 40px;
     background-color: red;
     color: white;
-    bottom: 20%;
+    bottom: 10%;
     right: 27.5%;
     border: solid 0.2px gray;
 }
@@ -56,7 +56,7 @@ hr{
   width: 37%;
 }
 textarea{
-  margin-top: 15%;
+  margin-top: 5%;
 }
 thead{
   background-color: red;
@@ -74,4 +74,7 @@ ul{
 }
 .three{
   margin-top: 80px;
+}
+.endDate{
+  margin-left: 20px;
 }
