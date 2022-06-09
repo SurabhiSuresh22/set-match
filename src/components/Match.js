@@ -25,14 +25,14 @@ const Match = ({team1,team2,name,location,comments,homeoraway1,homeoraway2,start
       {matches.map( e => { 
         return (
         <tr style={{width: '30px',height:'30px',overflow: 'scroll'}}>
-        <td><ul><li>{e.team1} {e.homeoraway1.label}</li></ul></td>
-        <td><ul><li>{e.team2} {e.homeoraway2.label}</li></ul></td>
-        <td><ul><li>{e.type.label}</li></ul></td>
+        <td><ul><li>{e.team1} <p>{"("}</p>{e.homeoraway1.label}<p>{")"}</p></li></ul></td>
+        <td><ul><li>{e.team2} <p>{"("}</p>{e.homeoraway2.label}<p>{")"}</p></li></ul></td>
+        <td><ul><li>{e.type.type.val}</li></ul></td>
         <td><ul><li>{e.name}</li></ul></td>
         <td><ul><li>{e.startDateTime.toUTCString()}</li></ul></td>
         <td><ul><li>{e.endDateTime.toUTCString()}</li></ul></td>
         <td><ul><li>{e.location}</li></ul></td>
-        <td><ul><li>{e.comments}</li></ul></td>
+        <td><ul><li style={{overflowY: 'scroll', overflowX: 'hidden', position:'relative'}}>{e.comments}</li></ul></td>
         </tr>) })}
     </tbody>
 </table>

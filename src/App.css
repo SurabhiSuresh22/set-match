@@ -78,3 +78,15 @@ ul{
 .endDate{
   margin-left: 20px;
 }
+p{
+  display: inline;
+}
+button{
+    position: fixed;
+    padding: 5px 40px;
+    background-color: red;
+    color: white;
+    bottom: 10%;
+    right: 20%;
+    border: solid 0.2px gray;
+}
