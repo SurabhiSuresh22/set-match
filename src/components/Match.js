@@ -27,7 +27,7 @@ const Match = ({team1,team2,name,location,comments,homeoraway1,homeoraway2,start
         <tr style={{width: '30px',height:'30px',overflow: 'scroll'}}>
         <td><ul><li>{e.team1} <p>{"("}</p>{e.homeoraway1.label}<p>{")"}</p></li></ul></td>
         <td><ul><li>{e.team2} <p>{"("}</p>{e.homeoraway2.label}<p>{")"}</p></li></ul></td>
-        <td><ul><li>{e.type.type.val}</li></ul></td>
+        <td><ul><li>{e.type.type.value}</li></ul></td>
         <td><ul><li>{e.name ? e.name : '-'}</li></ul></td>
         <td><ul><li>{format(e.startDateTime,'DD/MM/YY h:mm A')}</li></ul></td>
         <td><ul><li>{format(e.endDateTime.toString(),'DD/MM/YY H:mm A')}</li></ul></td>
