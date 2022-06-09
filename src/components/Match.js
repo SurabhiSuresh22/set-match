@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-//import { Types } from '../Context/TypeContext'
+import { format } from 'date-format-parse';
 
 const Match = ({team1,team2,name,location,comments,homeoraway1,homeoraway2,startDateTime,endDateTime,matches}) => {
-  //const {type} = useContext(Types)
+
   console.log(matches)
   return (
     
@@ -29,10 +29,10 @@ const Match = ({team1,team2,name,location,comments,homeoraway1,homeoraway2,start
         <td><ul><li>{e.team2} <p>{"("}</p>{e.homeoraway2.label}<p>{")"}</p></li></ul></td>
         <td><ul><li>{e.type.type.val}</li></ul></td>
         <td><ul><li>{e.name}</li></ul></td>
-        <td><ul><li>{e.startDateTime.toUTCString()}</li></ul></td>
-        <td><ul><li>{e.endDateTime.toUTCString()}</li></ul></td>
+        <td><ul><li>{format(e.startDateTime,'DD/MM/YY h:mm A')}</li></ul></td>
+        <td><ul><li>{format(e.endDateTime.toString(),'DD/MM/YY H:mm A')}</li></ul></td>
         <td><ul><li>{e.location}</li></ul></td>
-        <td><ul><li style={{overflowY: 'scroll', overflowX: 'hidden', position:'relative'}}>{e.comments}</li></ul></td>
+        <td><ul><li>{e.comments}</li></ul></td>
         </tr>) })}
     </tbody>
 </table>

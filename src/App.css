@@ -90,3 +90,7 @@ button{
     right: 20%;
     border: solid 0.2px gray;
 }
+table,td {
+  border-style: none !important;
+}
+

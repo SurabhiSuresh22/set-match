@@ -23,7 +23,7 @@ name,setName}) => {
                     <DateTimePicker
                       label="Start Date & Time"
                       value={startDateTime}
-                      onChange={(newVal) => {setStartDateTime(newVal)}}
+                      onChange={(newVal) => console.log(newVal)}
                       renderInput={(params) => <TextField {...params} />}
                     />
                   
