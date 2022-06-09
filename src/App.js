@@ -6,7 +6,9 @@ import Teams from './components/Teams';
 import Match from './components/Match';
 import {useState} from 'react'
 
+
 function App() {
+  
   const [startDateTime, setStartDateTime] = useState(new Date())
   const [endDateTime, setEndDateTime] = useState(new Date())
   const [location,setLocation] = useState('')
@@ -16,6 +18,7 @@ function App() {
   const [name,setName] = useState('')
   const [homeoraway1,setHomeorAway1] = useState('')
   const [homeoraway2,setHomeorAway2] = useState('')
+  const [matches,setMatches] = useState([])
 
   return (
     <div className="App">
@@ -39,12 +42,15 @@ function App() {
         team1={team1} setTeam1={setTeam1} 
         team2={team2} setTeam2={setTeam2}
         homeoraway1={homeoraway1} setHomeorAway1={setHomeorAway1}
-        homeoraway2={homeoraway2} setHomeorAway2={setHomeorAway2}/>}/>
+        homeoraway2={homeoraway2} setHomeorAway2={setHomeorAway2}
+         name={name} location={location} comments={comments} 
+        startDateTime={startDateTime}  endDateTime={endDateTime}
+        matches={matches} setMatches={setMatches}/>}/>
         
         <Route path="/Match" element={<Match team1={team1} team2={team2} 
         homeoraway1={homeoraway1} homeoraway2={homeoraway2} 
         name={name} location={location} comments={comments} 
-        startDateTime={startDateTime}  endDateTime={endDateTime}/>}/>
+        startDateTime={startDateTime}  endDateTime={endDateTime} matches={matches}/>}/>
       </Routes>
       </BrowserRouter>
     </div>
