@@ -11,6 +11,7 @@ const General = ({startDateTime,endDateTime,
   comments,setComments,
 location,setLocation,
 name,setName}) => {
+  
   const {type} = useContext(Types)
 
   return (
@@ -45,13 +46,13 @@ name,setName}) => {
               (<div className="col-md-6">
               <input type="text" name="" id="generalInput" placeholder='Match Location' 
               value={location} onChange={e=> setLocation(e.target.value)}/>
-              </div>) : 
-              (<div className="col-md-6">
+              </div>) : (<div className="col-md-6">
               <input type="text" name="" id="generalInput" placeholder='Match Location' 
                value={location} onChange={e=> setLocation(e.target.value)}/><br></br>
               <input type="text" name="" id="generalInput" placeholder='Tournament Name'
                value={name} onChange={e=> setName(e.target.value)} />
               </div>) }
+
               <div className="col-md-6">
                 <textarea id="comments" value={comments} onChange={e=> setComments(e.target.value)} placeholder='Comments' rows="13" cols="40">
                 </textarea>

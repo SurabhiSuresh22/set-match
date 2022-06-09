@@ -7,8 +7,8 @@ const Type = () => {
     
   const {type,setType} = useContext(Types)
   const options = [
-  { val: 'Friendly', label: 'Friendly' },
-  { val: 'Tournament', label: 'Tournament' }
+  { value: 'Friendly', label: 'Friendly' },
+  { value: 'Tournament', label: 'Tournament' }
   ]
   const colourStyles = {
   option: styles => ({ ...styles, backgroundColor: 'rgb(166, 165, 165)',fontWeight: '500' })
